@@ -1,0 +1,133 @@
+<div id="screen_id" data-screen-id="<%= @screen_id %>">
+    <div class="container-fluid display">
+        <% if @screenInfo.last.background.attached?  %>
+        <%= image_tag @screenInfo.last.background, class:'img-background' %>
+        <% else %>
+        <%= image_tag 'azul', class:'img-background' %>
+        <% end %>
+        <div class="row">
+                <% @screenInfo.each do |s| %>
+                        <% if s.cant_screen === 1 %>
+                            <div class="col border border-primary border-5 text-center   ">           
+                                <div class="space"><i class="bi bi-caret-down-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-0"><%= @info_outlet[s.outlets_id_0].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-0"><%= @info_outlet[s.outlets_id_0].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-0"><%= @info_outlet[s.outlets_id_0].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_weight_kg %> KG</span><br>
+                                <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-0"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-0"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                        <% elsif s.cant_screen === 2   %>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-left-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-0"><%= @info_outlet[s.outlets_id_0].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-0"><%= @info_outlet[s.outlets_id_0].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-0"><%= @info_outlet[s.outlets_id_0].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_weight_kg %> KG</span><br>
+                              <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-0"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-0"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-right-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-1"><%= @info_outlet[s.outlets_id_1].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-1"><%= @info_outlet[s.outlets_id_1].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-1"><%= @info_outlet[s.outlets_id_1].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-1"><%= @info_outlet[s.outlets_id_1].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-1"><%= @info_outlet[s.outlets_id_1].pack_weight_kg %> KG</span><br>
+                                 <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-1"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-1"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                        <% elsif s.cant_screen === 3   %>
+                        <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-left-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-0"><%= @info_outlet[s.outlets_id_0].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-0"><%= @info_outlet[s.outlets_id_0].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-0"><%= @info_outlet[s.outlets_id_0].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_weight_kg %> KG</span><br>
+                                 <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-0"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-0"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-down-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-1"><%= @info_outlet[s.outlets_id_1].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-1"><%= @info_outlet[s.outlets_id_1].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-1"><%= @info_outlet[s.outlets_id_1].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-1"><%= @info_outlet[s.outlets_id_1].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-1"><%= @info_outlet[s.outlets_id_1].pack_weight_kg %> KG</span><br>
+                                 <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-1"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-1"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-right-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-2"><%= @info_outlet[s.outlets_id_2].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-2"><%= @info_outlet[s.outlets_id_2].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-2"><%= @info_outlet[s.outlets_id_2].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-2"><%= @info_outlet[s.outlets_id_2].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-2"><%= @info_outlet[s.outlets_id_2].pack_weight_kg %> KG</span><br>
+                                  <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-2"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-2"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                            <% elsif s.cant_screen === 4  %>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-left-square"></i><i class="bi bi-caret-left-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-0"><%= @info_outlet[s.outlets_id_0].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-0"><%= @info_outlet[s.outlets_id_0].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-0"><%= @info_outlet[s.outlets_id_0].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-0"><%= @info_outlet[s.outlets_id_0].pack_weight_kg %> KG</span><br>
+                                <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-0"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-0"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-left-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-1"><%= @info_outlet[s.outlets_id_1].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-1"><%= @info_outlet[s.outlets_id_1].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-1"><%= @info_outlet[s.outlets_id_1].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-1"><%= @info_outlet[s.outlets_id_1].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-1"><%= @info_outlet[s.outlets_id_1].pack_weight_kg %> KG</span><br>
+                                 <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-1"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-1"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div> <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-right-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-2"><%= @info_outlet[s.outlets_id_2].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-2"><%= @info_outlet[s.outlets_id_2].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-2"><%= @info_outlet[s.outlets_id_2].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-2"><%= @info_outlet[s.outlets_id_2].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-2"><%= @info_outlet[s.outlets_id_2].pack_weight_kg %> KG</span><br>
+                                 <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-2"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-2"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                            <div class="col border border-primary border-5 text-center ">           
+                                <div class="space"><i class="bi bi-caret-right-square"></i><i class="bi bi-caret-right-square"></i></div>
+                                <!-- <span></i>IP:</span><span><%= s.ip %></span><br> -->
+                                <span><i class="bi bi-list-ol"></i>N° Outlet:</span><span id="info-screen-n-outlets-3"><%= @info_outlet[s.outlets_id_3].id_outlet_sz %></span><br>
+                                <span><i class="bi bi-receipt"></i>Outlet:</span><span id="info-screen-name-outlet-3"><%= @info_outlet[s.outlets_id_3].outlet_name %></span><br>
+                                <span><i class="bi bi-pencil-square"></i>Name:</span><span id="info-screen-desc-outlet-3"><%= @info_outlet[s.outlets_id_3].product_name %></span><br>
+                                <span><i class="bi bi-box"></i>Pack:</span><span id="info-screen-type-package-outlet-3"><%= @info_outlet[s.outlets_id_3].pack_name %></span><br>
+                                <span><i class="bi bi-bullseye"></i>Target:</span><span id="info-screen-target-outlet-3"><%= @info_outlet[s.outlets_id_3].pack_weight_kg %> KG</span><br>
+                                <span><i class="bi bi-activity"></i>Status:</span><span id="info-screen-status-3"><%= @info_outlet[s.outlets_id_0].outlet_status %></span><br>
+                                <span><i class="bi bi-speedometer2"></i>FPM:</span><span id="info-screen-fpm-3"><%= @info_outlet[s.outlets_id_0].outlet_fpm %> </span><br>
+                            </div>
+                        <% end %>
+                <% end  %>
+        </div>
+        </div>
+    </div>
+    <span><%= @screenInfo[0].ip %></span>
+</div>
+
+
+
+

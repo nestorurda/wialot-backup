@@ -1,0 +1,2 @@
+class WialotDevice < ApplicationRecord
+end

@@ -1,0 +1,47 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Devices</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with url: open_modal_update_path,model:Screen, method: :post, local:false do |form| %>
+            <%= form.hidden_field :id,value:@device.id %>
+           <div class="field">
+              <%= form.label 'Ip' %>
+              <%= form.text_field :ip,value:@device.ip,class:'form-control' %>
+           </div>
+           <div class="field">
+              <%= form.label 'Channel' %>
+              <%= form.text_field :screen_channel,value:@device.screen_channel ,class:'form-control',disabled:true%>              
+           </div>
+           <div class="field">
+              <%= form.label 'N° Screen' %>
+              <%= form.select :cant_screen ,{'uno':1, 'dos':2, 'tres':3, 'cuatro':4},{include_blank: "- Selecciona cant pantallas -"},{ required: true,class:'form-control'}%>              
+           </div>
+           <div class="field">
+              <%= form.label 'Config Out N° 0' %>
+              <%= form.select :outlets_id_0,Outlet.all.map {|out| [ out.id_outlet_sz , out.id_outlet_sz]} ,{include_blank: "- Selecciona Salida Calibrador -"},class:'form-control'%> 
+           </div>
+           <div class="field">
+              <%= form.label 'Config Out N° 1' %>
+              <%= form.select :outlets_id_1,Outlet.all.map {|out| [ out.id_outlet_sz ,out.id_outlet_sz]} ,{include_blank: "- Selecciona Salida Calibrador -"},class:'form-control' %>
+           </div>
+           <div class="field">             
+              <%= form.label 'Config Out N° 2' %>
+              <%= form.select :outlets_id_2,Outlet.all.map {|out| [ out.id_outlet_sz , out.id_outlet_sz]} ,{include_blank: "- Selecciona Salida Calibrador -"},class:'form-control' %>
+           </div>
+           <div class="field">
+              <%= form.label 'Config Out N° 3' %>
+              <%= form.select :outlets_id_3,Outlet.all.map {|out| [ out.id_outlet_sz ,out.id_outlet_sz]} ,{include_blank: "- Selecciona Salida Calibrador -"},class:'form-control' %>  
+           </div> 
+           <div class="actions">
+              <%= form.submit "Update", class:'btn btn-success mt-3' %>
+           </div>           
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

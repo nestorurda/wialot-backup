@@ -1,0 +1,2 @@
+module TempDevicesHelper
+end

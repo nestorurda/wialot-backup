@@ -1,0 +1,47 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Devices</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with url: open_modal_update_path,model:Screen, method: :post, local:false do |form| %>
+            <%= form.hidden_field :id,value:@device.id %>
+           <div class="field">
+              <%= form.label 'Ip' %>
+              <%= form.text_field :ip,value:@device.ip,class:'form-control' %>
+           </div>
+           <div class="field">
+              <%= form.label 'Channel' %>
+              <%= form.text_field :screen_channel,value:@device.screen_channel ,class:'form-control'%>              
+           </div>
+           <div class="field">
+              <%= form.label 'N° Screen' %>
+              <%= form.text_field :cant_screen,value:@device.cant_screen ,class:'form-control'%>              
+           </div>
+           <div class="field">
+              <%= form.label 'Config Out N° 0' %>
+              <%= form.text_field :outlets_id_0,value:@device.outlets_id_0 ,class:'form-control'%> 
+           </div>
+           <div class="field">
+              <%= form.label 'Config Out N° 1' %>
+              <%= form.text_field :outlets_id_1,value:@device.outlets_id_1,class:'form-control' %>
+           </div>
+           <div class="field">             
+              <%= form.label 'Config Out N° 2' %>
+              <%= form.text_field :outlets_id_2,value:@device.outlets_id_2,class:'form-control' %>
+           </div>
+           <div class="field">
+              <%= form.label 'Config Out N° 3' %>
+              <%= form.text_field :outlets_id_3,value:@device.outlets_id_3,class:'form-control' %>  
+           </div> 
+           <div class="actions">
+              <%= form.submit "Update", class:'btn btn-success mt-3' %>
+           </div>           
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

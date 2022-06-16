@@ -1,0 +1,2 @@
+class WialotDatum < ApplicationRecord
+end

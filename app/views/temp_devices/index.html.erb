@@ -1,0 +1,36 @@
+<div class="container mt-5 text-center">  
+<p id="notice"><%= notice %></p>
+
+<h1>Temp Devices</h1>
+
+<table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo dispositivo</th>
+        <th>Mac Address</th>
+        <th>Ip Address</th>
+        <th>Ubicacion</th>
+        <th>Firmware</th>
+        <th>Creado</th>
+        
+      </tr>
+    </thead>
+
+  <tbody>
+    <% @temp_devices.each do |temp_device| %>
+     <tr>
+        <td><%= temp_device.id_device %></td>
+        <td><%= temp_device.device_type %></td>
+        <td><%= temp_device.mac_address %></td>
+        <td><%= temp_device.ip_address %></td>
+        <td><%= temp_device.location_site %></td>
+        <td><%= temp_device.firmware %></td>
+        <td><%= time_ago_in_words(temp_device.create_at) %></td>
+        
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</div>

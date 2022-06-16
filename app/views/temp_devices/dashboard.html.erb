@@ -1,0 +1,122 @@
+<div class="container mt-5">
+  <div class="card text-center">
+    <div class="p-1">
+      <h3 class="p-1">Dispositivos </h3>
+      <table class='table table-striped '>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Tipo dispositivo</th>
+            <th>Mac Address</th>
+            <th>Ip Address</th>
+            <th>Ubicacion</th>
+            <th>Firmware</th>
+            <th>Creado</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @temp_devices.each do |temp_device| %>
+        <tr>
+            <td><%= temp_device.id_device %></td>
+            <td><%= temp_device.device_type %></td>
+            <td><%= temp_device.mac_address %></td>
+            <td><%= temp_device.ip_address %></td>
+            <td><%= temp_device.location_site %></td>
+            <td><%= temp_device.firmware %></td>
+            <td><%= time_ago_in_words(temp_device.create_at) %></td>
+            <td><i id="heartbeat-<%= temp_device.id_device  %>" class='bx bxs-circle gray'></i></td> 
+        </tr>        
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row mt-2 text-left mb-2">
+    <div class="col-6">
+      <div class="card ultimo-peso">
+        <h3 class="text-center pt-5">Ultimo Temperatura</h3>
+        <div class="row">
+          <div class="col-6 text-center pt-5"><span id="temp">Null</span><span class="unit">&nbsp;°C</span></div>
+          <div class="col-6">
+            <div class="pt-4"><span>Localizacion:&nbsp;</span><span   class="fw-bold" id="location">Null</span></div>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card text-center">
+        <div class="p-1">
+          <h3 class="p-1">Temperaturas</h3>
+           <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Tipo dispositivo</th>
+        <th>Ubicación</th>
+        <th>Medición</th>
+        <th>Unidad</th>
+        <th>creado</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @data_temp.each do |dataTemp| %>
+        <tr>
+          <td>
+            <%= dataTemp.id_device %>
+          </td>
+          <td>
+            <%= dataTemp.device_type %>
+          </td>
+          <td>
+            <%= dataTemp.location_site %>
+          </td>
+          <td>
+            <%= dataTemp.measure %>
+          </td>
+          <% if dataTemp.unit==2 %>
+            <td>C°</td>
+            <% elsif dataTemp.unit ==3 %>
+              <td>F°</td>
+              <% end %>
+                <td>
+                  <%= time_ago_in_words(dataTemp.create_at) %>
+                </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card "></div>
+      <h3 class="text-center pt-5"> Grafica Temperatura</h3>
+      <div class="">
+       <%= line_chart update_grafico_path ,min: 15, max: 35 , xtitle: "Tiempo", ytitle: "Temperatura",refresh: 1   %>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2 mb-2">
+    <div class="col-6">
+      <div class="card text-center ">
+        <div class="p-1">
+          <h3 class="p-1">Distribución Temperatura </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card text-center ">
+        <div class="p-1">
+          <h3 class="p-1">Promedio de temperatura por dispositivos </h3>
+        </div>
+       <%= bar_chart @data_temp.group(:create_at).average(:measure) %>
+      </div>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,60 @@
+<div class="container mt-5 text-center">
+  <h1>Datos de Temperatura</h1>
+  <div class="row height d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8">
+
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control" placeholder="Quieres conocer alguna temperatura?">
+        <button class="btn btn-primary"><i class='bx bx-search-alt-2 text-white'></i></button>
+      </div>
+
+    </div>
+
+  </div>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Tipo dispositivo</th>
+        <th>Ubicación</th>
+        <th>Medición</th>
+        <th>Unidad</th>
+        <th>creado</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @data_temp.each do |dataTemp| %>
+        <tr>
+          <td>
+            <%= dataTemp.id_device %>
+          </td>
+          <td>
+            <%= dataTemp.device_type %>
+          </td>
+          <td>
+            <%= dataTemp.location_site %>
+          </td>
+          <td>
+            <%= dataTemp.measure %>
+          </td>
+          <% if dataTemp.unit==2 %>
+            <td>C°</td>
+            <% elsif dataTemp.unit ==3 %>
+              <td>F°</td>
+              <% end %>
+                <td>
+                  <%= time_ago_in_words(dataTemp.create_at) %>
+                </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+</div>

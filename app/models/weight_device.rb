@@ -1,0 +1,2 @@
+class WeightDevice < ApplicationRecord
+end

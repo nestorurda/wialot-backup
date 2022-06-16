@@ -1,0 +1,2 @@
+class TempDevice < ApplicationRecord
+end

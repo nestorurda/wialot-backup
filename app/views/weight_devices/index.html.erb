@@ -1,0 +1,56 @@
+<div class="container mt-5 text-center">  
+  <h3>Dispositivos de pesos</h1>
+  
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Mac Address</th>
+        <th>Ip Address</th>
+        <th>Nombre Salidas</th>
+        <th>Firmware</th>
+        <th>Creado</th>
+        
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @weight_devices.each do |weight_device| %>
+        <tr>
+        <td><%= weight_device.id_device %></td>
+        <td><%= weight_device.mac_address %></td>
+        <td><%= weight_device.ip_address %></td>
+        <td><%= best_in_place weight_device, :outlet_name , :as=> :select, collection: Outlet.all.map {|outlet|
+                [outlet.outlet_name,"#{outlet.outlet_name}"]} ,tabindex: "1" %></td>
+        <td><%= weight_device.firmware %></td>
+        <td><%= time_ago_in_words(weight_device.created_at) %></td>
+        
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <h3>Salidas calibrador</h3>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Nombre Salidas</th>
+        <th>Nombre Producto</th>
+        <th>Nombre Paquete</th>
+        <th>Peso Paquete</th>
+        <th>Estado Salida</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @outlets.each do |outlet| %>
+        <tr>
+        <td><%= outlet.outlet_name %></td>
+        <td><%= outlet.product_name %></td>
+        <td><%= outlet.pack_name %></td>
+        <td><%= outlet.pack_weight_kg %></td>
+        <td><%= outlet.outlet_status %></td>
+      <% end %>
+    </tbody>
+    </table>
+</div>

@@ -1,0 +1,114 @@
+<div class="container-fluid overflow-hidden">
+    <div class="row vh-100 overflow-auto">
+        <div class="ancho px-sm-2 px-0 bg-persona d-flex sticky-top">
+            <div
+                class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
+                <a href="/"
+                    class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <a href="index.html"><%= image_tag 'logo',class:'img-fluid logo-admin' %></a>
+
+                </a>
+                <br>
+                <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start"
+                    id="menu">
+                    <li>
+                        <a href="<%= admin_index_path %>"  class="nav-link px-sm-0 px-2">
+                            <i class='bx bx-coffee' ></i><span class="ms-1 d-none d-sm-inline">Noticias y Alertas</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class='bx bx-fullscreen'></i><span class="ms-1 d-none d-sm-inline">Pantallas</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="<%= screens_index_path %>">Lista de dispositivos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class='bx bx-printer'></i><span class="ms-1 d-none d-sm-inline">Printer Server</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="<%= screens_index_path %>">Lista de dispositivos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class='bx bx-reflect-horizontal'></i><span class="ms-1 d-none d-sm-inline">Balanzas</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                        
+                            <li><a class="dropdown-item" href="<%= dashboard_weight_path %>">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="<%= weight_devices_path %>">Lista de dispositivos</a></li>
+                            <li><a class="dropdown-item" href="<%= weight_data_path %>">Mediciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bxs-hot'></i><span class="ms-1 d-none d-sm-inline">Temperatura</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                        <li><a class="dropdown-item" href="<%= dashboard_temp_path %>">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="<%= temp_devices_path %>">Lista de dispositivos</a></li>
+                            <li><a class="dropdown-item" href="<%= temp_data_path %>">Mediciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-water'></i><span class="ms-1 d-none d-sm-inline">Humedad</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                        <li><a class="dropdown-item" href="<%= admin_index_path %>">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="">Lista de dispositivos</a></li>
+                            <li><a class="dropdown-item" href="">Mediciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-sort-alt-2'></i><span class="ms-1 d-none d-sm-inline">Nivel</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                        <li><a class="dropdown-item" href="<%= admin_index_path %>">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="">Lista de dispositivos</a></li>
+                            <li><a class="dropdown-item" href="">Mediciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-equalizer'></i><span class="ms-1 d-none d-sm-inline">Flujo</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                        <li><a class="dropdown-item" href="<%= admin_index_path %>">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="">Lista de dispositivos</a></li>
+                            <li><a class="dropdown-item" href="">Mediciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class='bx bxl-deezer'></i><span class="ms-1 d-none d-sm-inline">Configuraciones</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="">Todos los pedidos</a></li>
+                            <li><a class="dropdown-item" href="#">Pedidos Abandonados</a></li>
+                            <li><a class="dropdown-item" href="#">Despachos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="">Seguimiento Pedido</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <div class="py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:'getboton' %>
+                </div>
+            </div>
+        </div>

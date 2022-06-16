@@ -1,0 +1,15 @@
+ <% @devices.each do |s| %>
+          <tr>
+            <th scope="row"><%= s.id %></th>
+            <td><%= s.ip %></td>
+            <td><%= s.screen_channel %></td>
+            <td><%= s.cant_screen %></td>
+            <td><%= s.outlets_id_0 %></td>
+            <td><%= s.outlets_id_1 %></td>
+            <td><%= s.outlets_id_2 %></td>
+            <td><%= s.outlets_id_3 %></td>      
+            <td><%= link_to "", open_modalb_path(s.id),class:'btn btn-sm bx bx-screenshot',type:'button','data-bs-toggle':"tooltip", 'data-bs-placement':"left", title:'Cambiar fondo', remote: true %>
+            <%= link_to "", open_modal_path(s.id),class:'btn btn-sm  bx bxs-color',type:'button','data-bs-toggle':"tooltip", 'data-bs-placement':"left", title:'Cambiar Parametros', remote: true %>
+            <a type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Ir a la Pantalla" class="btn btn-sm  bx bxs-right-top-arrow-circle"href="/screens/show/<%= s.screen_channel %>"></a></td>
+          </tr>
+ <% end  %>

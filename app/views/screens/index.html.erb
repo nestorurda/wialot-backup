@@ -1,0 +1,59 @@
+
+<div class="container mt-5">
+  <h2 class="pt-5">Dispositivos</h2>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Ip</th>
+        <th scope="col">Canal</th>
+        <th scope="col">Nº Pantallas</th>
+        <th scope="col">Salida #1</th>
+        <th scope="col">Salida #2</th>
+        <th scope="col">Salida #3</th>
+        <th scope="col">Salida #4</th>
+
+        <th scope="col">Acciones</th>
+      </tr>
+        </thead>
+        <tbody id="data">
+         <%= render 'shared_admin/screen' %>
+        </tbody>
+      </table>
+      <h2>Salidas</h2>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sizer</th>
+            <th scope="col">Nombre Salida</th>
+            <th scope="col">Nombre Producto</th>
+            <th scope="col">Nombre Display</th>
+            <th scope="col">Nombre Empaque</th>
+            <th scope="col">Peso Empaque KG</th>
+            <th scope="col">FPM</th>
+            <th scope="col">Estado</th>
+          </tr>
+            </thead>
+            <tbody>
+              <% @out.each_with_index do |o,idx| %>
+              <tr>
+                <th scope="row"><%= o.id %></th>
+                <td><span id="id_outlet_sz-<%= idx %>"><%= o.id_outlet_sz %></span></td>
+                <td><span id="outlet_name-<%= idx %>"><%= o.outlet_name %></span></td>
+                <td><span id="product_name-<%= idx %>"><%= o.product_name %></span></td>
+                <td><span id="product_display_name-<%= idx %>"><%= o.product_display_name %></span></td>
+                <td><span id="pack_name-<%= idx %>"><%= o.pack_name %></span></td>
+                <td><span id="pack_weight_kg-<%= idx %>"><%= o.pack_weight_kg %></span></td>
+                <td><span id="outlet_fpm-<%= idx %>"><%= o.outlet_fpm %></span></td>
+                <td><span id="outlet_status-<%= idx %>"><%= o.outlet_status %></span></td>   
+              </tr>
+              <% end %>          
+            </tbody>
+          </table>
+      
+    </div>
+<div id="modal"></div>
+<div id="modalback"></div>
+
+    

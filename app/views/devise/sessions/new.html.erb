@@ -1,0 +1,34 @@
+<div class="box-father">
+<div class="container col-4 box-son">
+ <div class="text-center"> 
+ <a href="index.html"><%= image_tag 'logo',class:'img-fluid logo-admin' %></a>
+ </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <%= f.label :email,class:'form-label' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+   <%= f.label :password,class:'form-label' %><br />
+    <%= f.password_field :password, autocomplete: "current-password",class:'form-control' %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me,class:'form-check-input' %>
+      <%= f.label :remember_me,class:'form-check-label' %>
+    </div>
+  <% end %>
+  
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Log in", class:'btn btn-primary d-grid gap-2' %>
+  </div>
+
+  <% end %>
+</div>
+</div>

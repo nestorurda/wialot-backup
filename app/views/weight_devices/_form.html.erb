@@ -1,0 +1,17 @@
+<%= form_with(model: weight_device) do |form| %>
+  <% if weight_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weight_device.errors.count, "error") %> prohibited this weight_device from being saved:</h2>
+
+      <ul>
+        <% weight_device.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

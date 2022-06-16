@@ -1,0 +1,5 @@
+//populate modal
+$('#modal').html('<%= escape_javascript(render(:partial => 'screens/modal')) %>');
+
+//render modal
+$('#exampleModal').modal('show');

@@ -1,0 +1,2 @@
+class WeightDatum < ApplicationRecord
+end

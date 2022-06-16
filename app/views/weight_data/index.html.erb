@@ -1,0 +1,60 @@
+<div class="container mt-5 text-center">
+  <h1>Weight Data</h1>
+  <div class="row height d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8">
+
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control" placeholder="Quieres conocer algun peso?">
+        <button class="btn btn-primary"><i class='bx bx-search-alt-2 text-white'></i></button>
+      </div>
+
+    </div>
+
+  </div>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Dispositivo</th>
+        <th>Salida</th>
+        <th>Peso</th>
+        <th>Unidad</th>
+        <th>creado</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @weight_data.each do |weight_datum| %>
+        <tr>
+          <td>
+            <%= weight_datum.id_weight_data %>
+          </td>
+          <td>
+            <%= weight_datum.id_device %>
+          </td>
+          <td>
+            <%= weight_datum.outlet_name %>
+          </td>
+          <td>
+            <%= ((weight_datum.weight.to_f/1000).round(3).to_s) %>
+          </td>
+          <% if weight_datum.unit=='0' %>
+            <td>kg</td>
+            <% else %>
+              <td>lb</td>
+              <% end %>
+                <td>
+                  <%= time_ago_in_words(weight_datum.created_at) %>
+                </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+</div>
